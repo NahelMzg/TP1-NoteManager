@@ -4,7 +4,9 @@ Rapport
 
 Pour cette partie, nous avons utilisé Claude afin de vibecoder le projet. Le prompt, disponible en Annexe, a été rédigé à partir de l'énoncé de TP en reprenant les éléments importants relatifs aux fonctionnalités et contraintes attendus. Dans un premier temps, nous avions généré un projet ne contenant qu'une seule classe, mais cela ne présentait pas d'intérêt pour la visualisation Roassal (pas de comparaisons entre classes possible), c'est pour cela que nous avons choisi de reprendre notre prompt en ajoutant la phrase suivante : 
 
-"Il faut que le projet utilise un design orienté objet avec l’implication de plusieurs classes différentes."
+>```bash
+>Il faut que le projet utilise un design orienté objet avec l’implication de plusieurs classes différentes.
+>```
 
 Cela nous a permis d'obtenir un projet beaucoup disposant d'un design fortement orienté objet avec de multiples classes. Ce choix a également été réalisé en prévision du TP2, nous aurions dans tous les cas due regénérer un projet avec plusieurs classes sur les recommandations du professeur.
 
@@ -21,7 +23,7 @@ Ce processus de vibecoding nous a pris au total 30 minutes (20 minutes pour la p
 
 3.2 -
 
-Nous avons pu, avec l'aide du professeur, utiliser la commande "npm update -g ts2famix" afin de générer notre modèle json pour qu'il puisse être compatible avec la visualisation Roassal dans Moose.
+Nous avons pu, avec l'aide du professeur, utiliser la commande `npm update -g ts2famix` afin de générer notre modèle json pour qu'il puisse être compatible avec la visualisation Roassal dans Moose.
 
 1. Le modèle généré par ts2famix permet, à partir du code source, de représenter la structure du code. Ce modèle permet donc d'avoir une idée claire de ce qui se passe dans le code source.
 
@@ -42,6 +44,7 @@ Annexe 2. Visualisation Roassal des classes du projet
 ![Architecture diagram](images/classGraphRoassal.png)
 
 Annexe 3. Prompt utilisé pour généré le projet TypeScript -
+
 
 Tu es un codeur expérimenté et tu dois réaliser un petit logiciel simple de création de  notes en Typescript dont les spécifications te sont données ci-après. A partir de ces spécifications, prends les initiatives nécessaires pour réaliser ce logiciel, avec ou sans interface utilisateur, selon ce que tu penses être la meilleure solution. Il faut que le projet utilise un design orienté objet avec l’implication de plusieurs classes différentes.
 
