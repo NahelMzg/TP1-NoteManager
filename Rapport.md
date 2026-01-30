@@ -27,9 +27,17 @@ Rapport
 
 
 
-Annexe -
 
-Annexe 1. Prompt utilisé pour généré le projet TypeScript -
+
+
+
+Annexe -
+Annexe 1. Visualisation Roassal des classes du projet
+
+
+![Architecture diagram](images/classGraphRoassal.png)
+
+Annexe 2. Prompt utilisé pour généré le projet TypeScript -
 
 Tu es un codeur expérimenté et tu dois réaliser un petit logiciel simple de création de  notes en Typescript dont les spécifications te sont données ci-après. A partir de ces spécifications, prends les initiatives nécessaires pour réaliser ce logiciel, avec ou sans interface utilisateur, selon ce que tu penses être la meilleure solution. 
 
