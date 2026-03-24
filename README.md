@@ -295,6 +295,36 @@ Ce projet démontre :
 6. **Design patterns** : Singleton, Factory, Repository, Service Layer
 7. **Testabilité** : Architecture facilitant les tests unitaires et fonctionnels
 
+## 🔁 Refactorings pertinents à envisager
+
+Voici des refactorings concrets, classés par impact et simplicité de mise en œuvre :
+
+1. **Éviter les appels répétés à `repository.findAll()` dans `NoteService`**
+   - Créer une méthode privée (`getAllNotesSnapshot`) réutilisée par `searchNotes`, `getNotesByTag`, `exportNotes`, etc.
+   - Bénéfice : réduit la duplication et centralise l’accès à la source de vérité.
+
+2. **Extraire le rendu de note dans `CLIController`**
+   - Les méthodes `listNotes`, `searchNotes` et `filterByTag` répètent la logique d’affichage (titre, ID, preview, tags).
+   - Extraire vers une méthode privée (`printNoteSummary(note, index, verbose?)`).
+   - Bénéfice : code plus lisible, maintenance plus simple.
+
+3. **Introduire un type pour les options des actions Commander**
+   - Remplacer les `options` implicites par des interfaces TypeScript dédiées (`CreateOptions`, `ListOptions`, etc.).
+   - Bénéfice : meilleur typage, autocomplétion et réduction des erreurs runtime.
+
+4. **Isoler la logique de formatage CLI**
+   - Déplacer les formats (`preview`, séparateurs, dates) dans un petit utilitaire dédié.
+   - Bénéfice : sépare la logique métier (service) de la présentation (CLI), facilite les tests.
+
+5. **Découpler l’initialisation de `App` de `process.cwd()`**
+   - Injecter le chemin de données dans `App` (avec valeur par défaut) au lieu de le calculer en dur.
+   - Bénéfice : facilite les tests d’intégration et la réutilisation dans d’autres contextes.
+
+6. **Renforcer les tests de contrôleur avec mock de `console`**
+   - Aujourd’hui les tests couvrent surtout le service métier.
+   - Ajouter des tests ciblés pour valider les sorties CLI principales.
+   - Bénéfice : meilleure couverture sur l’interface utilisateur en ligne de commande.
+
 ## 📝 Licence
 
 MIT
